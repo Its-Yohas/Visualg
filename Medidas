@@ -1,0 +1,60 @@
+algoritmo "medidas"
+
+Var
+	nome, sexo: caractere
+	soma_altura, altura: real
+	media_mulheres, maior_altura: real
+	num_homens, num_mulheres, pessoas: inteiro
+	pessoa_mais_alta: caractere
+	
+Inicio
+	soma_altura <- 0
+	media_mulheres <- 0
+	num_homens <- 0
+	num_mulheres <- 0
+	maior_altura <- 0
+	pessoas <- 0	
+	altura <- 0
+	
+	// Loop para coletar os dados das 5 pessoas
+	para pessoas de 1 ate 5 faca
+		escreval("Complete as informações a seguir")
+		
+      escreval("Digite o nome da pessoa", pessoas)
+		leia (nome)
+				
+		escreval ("Digite o sexo da pessoa (M ou F): ")
+		leia (sexo)
+		
+     	escreval("Digite a altura : ")
+      leia(altura)	
+		
+		se (sexo = "F") entao
+			num_mulheres <- num_mulheres + 1
+ 		senao se (sexo = M) entao
+			num_homens <- num_homens +1
+		fimse
+
+       soma_altura <- soma_altura + altura
+       
+       se (altura > maior_altura) entao
+           maior_altura <- altura
+           pessoa_mais_alta <- nome
+       fimse
+	
+		Se (Sexo = "F") entao
+		   media_mulheres <- altura + num_mulheres
+      fimse
+
+fimpara
+      		
+	// Exibe os resultados	
+   escreval ("A soma de todas as alturas", soma_altura)
+	escreval ("O nome da pessoa mais alta", pessoa_mais_alta )
+  //creio não ter conseguido calcular a media de mulheres
+	escreval ("A média de altura das mulheres é:", media_mulheres)
+	escreval ("O número de homens é:", num_homens)
+	escreval ("O número de mulheres é:", num_mulheres)
+
+fimalgoritmo
+
